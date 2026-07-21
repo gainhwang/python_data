@@ -1,0 +1,22 @@
+# 모든 data 폴더
+**/data/
+
+# 데이터 파일
+*.csv
+*.parquet
+
+# JSON 데이터
+**/api_response.json
+**/invalid_records.json
+**/dead_letter.json
+
+# Python 캐시
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# 가상환경
+.venv/
+venv/

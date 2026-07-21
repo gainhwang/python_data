@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{{ title }}</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #222;
+        }
+
+        h1 {
+            border-bottom: 3px solid #1f3864;
+            padding-bottom: 12px;
+        }
+
+        .generated-time {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .kpi-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .kpi-card {
+            min-width: 180px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f7f8fa;
+        }
+
+        .kpi-name {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .kpi-value {
+            margin-top: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1f3864;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+
+    <p class="generated-time">
+        생성 시각: {{ generated_at }}
+    </p>
+
+    <h2>핵심 지표</h2>
+
+    <div class="kpi-container">
+        {% for name, value in kpi.items() %}
+        <div class="kpi-card">
+            <div class="kpi-name">
+                {{ name }}
+            </div>
+
+            <div class="kpi-value">
+                {{ "{:,.1f}".format(value) }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>카테고리별 매출</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>순위</th>
+                <th>카테고리</th>
+                <th>매출액</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for row in by_category %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ row.category }}</td>
+                <td>{{ "{:,.1f}".format(row.amount) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>지역별 매출</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>순위</th>
+                <th>지역</th>
+                <th>매출액</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for row in by_region %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ row.region }}</td>
+                <td>{{ "{:,.1f}".format(row.amount) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p class="footer">
+        이 리포트는 Python과 Jinja2를 이용해 자동 생성되었습니다.
+    </p>
+</body>
+</html>

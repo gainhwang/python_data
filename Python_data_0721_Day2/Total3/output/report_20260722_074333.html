@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <title>일일 매출 리포트</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #222;
+        }
+
+        h1 {
+            border-bottom: 3px solid #1f3864;
+            padding-bottom: 12px;
+        }
+
+        .generated-time {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .kpi-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .kpi-card {
+            min-width: 180px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f7f8fa;
+        }
+
+        .kpi-name {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .kpi-value {
+            margin-top: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1f3864;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>일일 매출 리포트</h1>
+
+    <p class="generated-time">
+        생성 시각: 2026-07-22 07:43:33
+    </p>
+
+    <h2>핵심 지표</h2>
+
+    <div class="kpi-container">
+        
+        <div class="kpi-card">
+            <div class="kpi-name">
+                총매출
+            </div>
+
+            <div class="kpi-value">
+                11,977,808,014.0
+            </div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-name">
+                주문수
+            </div>
+
+            <div class="kpi-value">
+                5,000.0
+            </div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-name">
+                평균주문액
+            </div>
+
+            <div class="kpi-value">
+                2,395,561.6
+            </div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-name">
+                총판매수량
+            </div>
+
+            <div class="kpi-value">
+                92,806.0
+            </div>
+        </div>
+        
+    </div>
+
+    <h2>카테고리별 매출</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>순위</th>
+                <th>카테고리</th>
+                <th>매출액</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            
+            <tr>
+                <td>1</td>
+                <td>Beauty</td>
+                <td>2,985,306,995.3</td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>Fashion</td>
+                <td>2,653,514,064.0</td>
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td>Electronics</td>
+                <td>2,515,917,830.3</td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td>Food</td>
+                <td>1,968,140,194.2</td>
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td>Home</td>
+                <td>1,854,928,930.2</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <h2>지역별 매출</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>순위</th>
+                <th>지역</th>
+                <th>매출액</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            
+            <tr>
+                <td>1</td>
+                <td>Busan</td>
+                <td>2,560,621,489.6</td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>Gwangju</td>
+                <td>2,310,088,410.6</td>
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td>Incheon</td>
+                <td>2,265,836,784.1</td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td>Daegu</td>
+                <td>2,129,391,443.7</td>
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td>Seoul</td>
+                <td>1,943,998,637.8</td>
+            </tr>
+            
+            <tr>
+                <td>6</td>
+                <td>Unknown</td>
+                <td>767,871,248.2</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <p class="footer">
+        이 리포트는 Python과 Jinja2를 이용해 자동 생성되었습니다.
+    </p>
+</body>
+</html>
