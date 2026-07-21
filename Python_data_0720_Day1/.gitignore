@@ -1,0 +1,18 @@
+# 모든 data 폴더
+**/data/
+
+# 데이터 파일
+*.csv
+*.parquet
+
+# 과제에서 생성되는 JSON 데이터
+**/api_response.json
+**/invalid_records.json
+**/dead_letter.json
+
+# 기타
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
